@@ -1,1 +1,1 @@
-export default 2000
+export default {port:2000,stage:'development'}

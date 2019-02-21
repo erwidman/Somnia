@@ -31,7 +31,7 @@ function contextCheck(){
     })
     .then(()=>
             fs.writeFileSync(
-                path.join(global.projDir,'Infrastructure.json'),
+                path.join(global.projDir,'somnia_cloud.json'),
                 '{}',
                 {flag:'wx'}
             )

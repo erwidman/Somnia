@@ -20,7 +20,7 @@ const createPool = (params,cloud)=>{
         `--pool-name ${poolName} `+
         `--policies ${passwordPolicy} `+
         `--username-attributes ${params.uid} `+
-        `--mfa-configuration OFF `+
+        `--auto-verified-attributes \"email\" `+
         `--query UserPool.Id ` + 
         `--output text`
     )
@@ -50,13 +50,17 @@ const createPool = (params,cloud)=>{
 }
 
 
-const generatePool = ({phone,email,username,password},cloud)=>{
-    if(phone && email && !username)
+const generatePool = ({phone_number,email,username,password},cloud)=>{
+    if(phone_number && email || username)
         return createPool({uid:'email'},cloud)
+    else 
+        return Promise.reject(new Error('INVALID_PARAMS'))
+    
 }
 
 const main = (params,ws,cloud)=>{
     if(!cloud.userPool){
+        console.log(generatePool)
         generatePool(params,cloud)
         .then(()=>ws.send("POOL_GENERATED"))
         .catch(err=>{

@@ -18,7 +18,7 @@ const execute = (port,state)=>{
       
       fs.writeFile(
           path.join(global.projDir,'client','endpoint.js'),
-          `export default ${port}`,
+          `export default {port:${port},stage:'development'}`,
           {flag:'w+'},
           err=>{
               if(err){
@@ -34,7 +34,7 @@ const execute = (port,state)=>{
 
 module.exports = (state,program)=>{
     program
-    .command('start <port>')
+    .command('develop <port>')
     .action(port=>execute(port,state))
 
 }

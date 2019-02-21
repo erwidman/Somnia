@@ -2,8 +2,9 @@ import endpoint from './endpoint.js'
 
 
 const initWebsocket = ()=>{
+    console.log(endpoint)
     return new Promise((resolve, reject) => {
-        let ws = new WebSocket(`ws://localhost:${endpoint}`)
+        let ws = new WebSocket(`ws://localhost:${endpoint.port}`)
         ws.onmessage = event=>{
             if(event.data==="SOMNIA_HANDSHAKE")
                 resolve(ws)
@@ -23,4 +24,4 @@ const sendMessage = (ws,msg)=>{
 export default {
                     initWebsocket,
                     sendMessage
-                }
+               }

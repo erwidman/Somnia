@@ -10,7 +10,7 @@ fs.readdirSync(path.join(__dirname,'generators'))
 .forEach(file=>requestRouter[path.parse(file).name]=require(path.join(__dirname,'generators',file)))
 
 //get cloudSpec
-const cloudSpec = JSON.parse(fs.readFileSync(path.join(global.projDir,'Infrastructure.json')))
+const cloudSpec = JSON.parse(fs.readFileSync(path.join(global.projDir,'somnia_cloud.json')))
 
 
 

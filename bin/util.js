@@ -28,7 +28,7 @@ const exit = (state)=>{
 }
 
 const updateCloud = (cloud)=>
-    promiseWrite(path.join(global.projDir,'Infrastructure.json'),JSON.stringify(cloud))
+    promiseWrite(path.join(global.projDir,'somnia_cloud.json'),JSON.stringify(cloud))
 
 
 module.exports = {
