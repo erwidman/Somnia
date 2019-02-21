@@ -1,0 +1,49 @@
+{
+  "name": "somnia-tmp",
+  "version": "0.0.1",
+  "description": "A noBackend inspired framework including implicit generation of AWS services. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "buildDev": "webpack --mode development",
+    "buildProd": "webpack --mode production",
+    "tl": "npm install -g /Users/ericwidmann/Desktop/Somnia"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwidman/Somnia.git"
+  },
+  "bin": {
+    "somnia": "./bin/index.js"
+  },
+  "keywords": [
+    "noBackend"
+  ],
+  "author": "Eric Richard Widmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erwidman/Somnia/issues"
+  },
+  "homepage": "https://github.com/erwidman/Somnia#readme",
+  "dependencies": {
+    "aws-sdk": "^2.407.0",
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "pkg-up": "^2.0.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "somnia": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react-hot-loader": "^4.6.5",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "ws": "^6.1.4"
+  }
+}
